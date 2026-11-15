@@ -1,4 +1,4 @@
-# Arrowstack Data Science Internship — Task 1
+# Arrowstack Data Science Internship, Task 1
 
 ## Comprehensive Exploratory Data Analysis (EDA)
 
@@ -10,67 +10,59 @@
 
 ## Project objective
 
-This notebook studies employee attrition using the IBM HR Analytics dataset. I first check the data quality, then clean the data where required and use tables, charts and statistical checks to study the main patterns.
+This notebook studies employee attrition using the IBM HR Analytics dataset. It checks data quality, documents cleaning decisions, and uses tables, charts, and statistical checks to examine observed patterns.
 
-The analysis is descriptive. A higher observed attrition rate is treated as a place to investigate next, not as proof that a factor causes employees to leave.
+The analysis is descriptive. A higher observed attrition rate is treated as a signal for further investigation, not as proof that a factor causes employees to leave.
 
-## Main coverage
+## Files in this repository
 
-- Exact Kaggle dataset loading with expected file and shape checks
-- Complete data dictionary for all loaded source columns
-- Missing-value, duplicate and employee-identifier checks
-- Constant-column and basic numeric range checks
-- Logical workforce consistency checks
-- Traceable cleaning decisions with raw data preserved
-- IQR outlier review without blind deletion
-- Overall attrition count and percentage
-- Eight business questions plus additional employee-profile analysis
-- Group-wise attrition counts and within-group rates
-- Small-group safeguard
-- Direct attrition-linked multivariate analysis
-- Pearson correlation review
-- Chi-square tests with expected-count diagnostics, Cramer's V and FDR adjustment
-- Mann-Whitney U tests with rank-biserial effect size and FDR adjustment
-- Wilson 95% intervals for key observed rates
-- Evidence summary and transparent investigation-priority rule
-- Business KPI definition and executive decision summary
-- Responsible-use and privacy note
-- Findings, recommendations, non-causal interpretation and limitations
-- Final automated validation and reproducibility check
-- Rubric coverage map and viva/demo explanation
-- Final submission checklist
+- `Arrowstack_Task_1_Comprehensive_EDA_Srishti_Pandey_FINAL_100_MARK_MASTER_(2).ipynb`: main EDA notebook.
+- `Task_1_Employee_Attrition_EDA_Presentation_ By_Srishti_Pandey.pptx`: project presentation.
+
+The filenames above match the files currently stored in this repository.
+
+## Main analysis coverage
+
+- Loads the Kaggle dataset and checks the expected source file and shape.
+- Builds a data dictionary for all loaded source columns.
+- Checks missing values, duplicate rows, employee identifiers, constant columns, numeric ranges, and logical workforce relationships.
+- Preserves the raw dataframe and records cleaning decisions.
+- Reviews IQR outliers without deleting them automatically.
+- Calculates overall attrition counts and rates.
+- Answers eight business questions and adds employee-profile analysis.
+- Compares group counts and within-group attrition rates, with a small-group safeguard.
+- Reviews Pearson correlations and multivariate patterns.
+- Runs Chi-square and Mann-Whitney U tests, reports effect sizes, and applies Benjamini-Hochberg false discovery rate adjustment.
+- Checks Chi-square expected counts and calculates Wilson 95% intervals for selected observed rates.
+- Summarizes findings, investigation priorities, business recommendations, responsible-use considerations, and limitations.
+- Includes automated validation, reproducibility notes, rubric coverage, and a viva/demo explanation.
 
 ## How to run in Google Colab
 
-1. Open `Arrowstack_Task_1_Comprehensive_EDA_Srishti_Pandey_FINAL_100_MARK_MASTER.ipynb` in Google Colab.
-2. Use a **fresh runtime**.
-3. Select **Runtime -> Run all**.
-4. Wait for the Kaggle dataset and all cells to finish.
-5. Go to the final validation section.
-6. Confirm the exact message:
+1. Upload or open the notebook file listed above in Google Colab.
+2. Use a fresh runtime.
+3. Select **Runtime → Run all**.
+4. Wait for the Kaggle dataset download and all cells to finish.
+5. Review the final validation section.
+6. Confirm the notebook prints:
 
-**PASS: All final validation checks passed.**
+   `PASS: All final validation checks passed.`
 
-7. Save the executed notebook with important outputs visible.
-
-The notebook downloads the CSV automatically, so the CSV does not need to be uploaded manually before the first run.
+The notebook downloads the CSV automatically using KaggleHub. The CSV does not need to be uploaded manually before the first run. Internet access is required for the package installation and dataset download.
 
 ## Dataset and reproducibility
 
-Kaggle dataset identifier:
-`pavansubhasht/ibm-hr-analytics-attrition-dataset`
+**Kaggle dataset identifier:** `pavansubhasht/ibm-hr-analytics-attrition-dataset`  
+**Expected source file:** `WA_Fn-UseC_-HR-Employee-Attrition.csv`  
+**Expected source shape:** 1,470 rows × 35 columns
 
-Expected source file:
-`WA_Fn-UseC_-HR-Employee-Attrition.csv`
-
-Expected source shape:
-`1470 rows × 35 columns`
+The notebook checks the loaded shape against this expected shape in its final validation section.
 
 ## Statistical interpretation
 
-P-values are used only as exploratory evidence. Multiple-test p-values are adjusted with the Benjamini-Hochberg false discovery rate procedure. Effect sizes are reported alongside p-values. Chi-square expected-count diagnostics are also checked. Wilson intervals are included to show uncertainty around observed group rates.
+P-values are used as exploratory evidence. Multiple-test p-values are adjusted with the Benjamini-Hochberg false discovery rate procedure. Effect sizes are reported alongside p-values. Chi-square expected-count diagnostics are checked, and Wilson intervals show uncertainty around selected observed group rates.
 
-These checks do not prove causality. The notebook uses group size, rate difference, effect size and business context together before calling a group a higher investigation priority.
+These checks do not establish causality. Group size, observed rate differences, effect sizes, and business context are considered together before identifying an investigation priority.
 
 ## Business priority rule
 
@@ -79,14 +71,12 @@ A group is marked **Higher priority** only when:
 - it is not flagged as a small group under the 30-record check, and
 - its observed attrition rate is at least 5 percentage points above the overall observed attrition rate.
 
-This is a transparent project rule for prioritizing further investigation. It is not a universal HR threshold.
+This is a transparent project-specific rule for prioritizing further investigation. It is not a universal HR threshold.
 
-## GitHub package
+## Limitations
 
-Recommended folder:
+- The analysis is based on the supplied IBM HR Analytics dataset and its available fields.
+- Observed associations do not establish cause and effect.
+- Priority labels are exploratory and should not be used alone for employee-level decisions.
+- The notebook requires internet access to install dependencies and download the Kaggle dataset.
 
-```text
-OIBSIP/Arrowstack-DataScience-Task1-EmployeeAttritionEDA/
-├── Arrowstack_Task_1_Comprehensive_EDA_Srishti_Pandey_FINAL_100_MARK_MASTER.ipynb
-├── README_Arrowstack_Task_1_Srishti_Pandey_FINAL_100_MARK_MASTER.md
-└── Arrowstack_Task_1_Employee_Attrition_EDA_Presentation_Srishti_Pandey.pptx
