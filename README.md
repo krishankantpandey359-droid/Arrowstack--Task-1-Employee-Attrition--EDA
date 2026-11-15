@@ -19,7 +19,7 @@ The analysis is descriptive. A higher observed attrition rate is treated as a si
 - `Arrowstack_Task_1_Comprehensive_EDA_Srishti_Pandey_FINAL_100_MARK_MASTER_(2).ipynb`: main EDA notebook.
 - `Task_1_Employee_Attrition_EDA_Presentation_ By_Srishti_Pandey.pptx`: project presentation.
 
-The filenames above match the files currently stored in this repository.
+The filenames above match the files currently stored in this repository. The supplied Kaggle dataset is downloaded at runtime; the original dataset is not modified or replaced by synthetic records.
 
 ## Main analysis coverage
 
@@ -78,5 +78,5 @@ This is a transparent project-specific rule for prioritizing further investigati
 - The analysis is based on the supplied IBM HR Analytics dataset and its available fields.
 - Observed associations do not establish cause and effect.
 - Priority labels are exploratory and should not be used alone for employee-level decisions.
-- The notebook requires internet access to install dependencies and download the Kaggle dataset.
+- The notebook requires internet access to install dependencies and download the Kaggle dataset. Install the pinned project dependency ranges with `python -m pip install -r requirements.txt` before running locally. GitHub Actions validates the notebook format and executes all cells on pushes and pull requests.
 
