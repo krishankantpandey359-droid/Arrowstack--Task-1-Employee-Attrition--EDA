@@ -1,4 +1,4 @@
-# Arrowstack Data Science Internship, Task 1
+# Employee Attrition Analysis
 
 ## Comprehensive Exploratory Data Analysis (EDA)
 
