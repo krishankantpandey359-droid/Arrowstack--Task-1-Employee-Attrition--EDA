@@ -1,0 +1,50 @@
+name: Employee attrition notebook checks
+
+on:
+  push:
+    branches: [main, "audit/**"]
+  pull_request:
+
+jobs:
+  notebook:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install project dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Validate notebook structure
+        run: |
+          python - <<'PY'
+          import nbformat
+          from pathlib import Path
+          notebooks = list(Path(".").glob("*.ipynb"))
+          assert len(notebooks) == 1, f"Expected one notebook, found {len(notebooks)}"
+          nb = nbformat.read(notebooks[0], as_version=4)
+          nbformat.validate(nb)
+          code_cells = [c for c in nb.cells if c.cell_type == "code" and c.source.strip()]
+          assert code_cells, "Notebook has no executable code cells"
+          print(f"Notebook valid: {len(nb.cells)} cells, {len(code_cells)} code cells")
+          PY
+      - name: Execute complete notebook
+        run: |
+          NOTEBOOK="$(find . -maxdepth 1 -name '*.ipynb' -print -quit)"
+          jupyter nbconvert --to notebook --execute "$NOTEBOOK" --output executed_employee_attrition.ipynb --ExecutePreprocessor.timeout=900
+      - name: Verify execution completed without errors
+        run: |
+          python - <<'PY'
+          import nbformat
+          from pathlib import Path
+          nb = nbformat.read("executed_employee_attrition.ipynb", as_version=4)
+          cells = [c for c in nb.cells if c.cell_type == "code" and c.source.strip()]
+          assert cells and all(c.execution_count is not None for c in cells)
+          errors = [(i, o.ename, o.evalue) for i, c in enumerate(nb.cells) for o in c.get("outputs", []) if o.output_type == "error"]
+          assert not errors, errors
+          print(f"PASS: {len(cells)} code cells executed without errors.")
+          PY
