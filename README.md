@@ -32,8 +32,8 @@ The filenames above match the files currently stored in this repository. The sup
 - Answers eight business questions and adds employee-profile analysis.
 - Compares group counts and within-group attrition rates, with a small-group safeguard.
 - Reviews Pearson correlations and multivariate patterns.
-- Runs Chi-square and Mann-Whitney U tests, reports effect sizes, and applies Benjamini-Hochberg false discovery rate adjustment.
-- Checks Chi-square expected counts and calculates Wilson 95% intervals for selected observed rates.
+- Runs Chi-square and Mann-Whitney U tests, reports effect sizes, and applies Benjamini-Hochberg false discovery rate adjustment within test families and across the combined comparison set.
+- Checks Chi-square expected counts and flags tests where the asymptotic p-value assumptions are not adequately supported; calculates Wilson 95% intervals for selected observed rates.
 - Summarizes findings, investigation priorities, business recommendations, responsible-use considerations, and limitations.
 - Includes automated validation, reproducibility notes, rubric coverage, and a viva/demo explanation.
 
