@@ -80,3 +80,6 @@ This is a transparent project-specific rule for prioritizing further investigati
 - Priority labels are exploratory and should not be used alone for employee-level decisions.
 - The notebook requires internet access to install dependencies and download the Kaggle dataset. Install the pinned project dependency ranges with `python -m pip install -r requirements.txt` before running locally. GitHub Actions validates the notebook format and executes all cells on pushes and pull requests.
 
+## Latest GitHub Actions validation
+
+Latest verified successful main-branch workflow run checked on 24 November 2026: [GitHub Actions run #45312257420](https://github.com/krishankantpandey359-droid/Arrowstack--Task-1-Employee-Attrition--EDA/actions/runs/45312257420). This run verifies the checks configured in this repository's workflow; it does not replace manual testing of features outside CI.
