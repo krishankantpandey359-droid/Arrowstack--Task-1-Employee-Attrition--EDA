@@ -82,4 +82,4 @@ This is a transparent project-specific rule for prioritizing further investigati
 
 ## Latest GitHub Actions validation
 
-Latest verified successful main-branch workflow run checked on 24 November 2026: [GitHub Actions run #45312257420](https://github.com/krishankantpandey359-droid/Arrowstack--Task-1-Employee-Attrition--EDA/actions/runs/45312257420). This run verifies the checks configured in this repository's workflow; it does not replace manual testing of features outside CI.
+Latest verified successful main-branch workflow run checked on 24 November 2026: [GitHub Actions run #45313930600](https://github.com/krishankantpandey359-droid/Arrowstack--Task-1-Employee-Attrition--EDA/actions/runs/45313930600). This run verifies the checks configured in this repository's workflow; it does not replace manual testing of features outside CI.
